@@ -1,0 +1,27 @@
+[user]
+	name = Ricardo Magalhaes
+	email = magalhini@gmail.com
+[credential]
+	helper = osxkeychain
+[color]
+	ui = true
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	cdev = checkout develop pull origin develop
+	cmas = checkout master pull origin master
+	st = status -sb
+	c = commit
+	ca = commit -v -a
+	s = status -s
+	p = !"git pull; git submodule foreach git pull origin master"
+	co = checkout
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+	# Compare branches: usage branch1..branch2
+	comp = diff --name-status
+
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
